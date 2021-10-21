@@ -2,8 +2,6 @@ import socket
 import func
 from Crypto.Util.Padding import pad
 
-K = b'asdeterjsdfwerlg'
-
 # creating a socket for the KM node and connecting to it
 sockNodeKM = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address_KM = ('localhost', 8800)
@@ -19,6 +17,8 @@ sockNodeKM.sendall(binMode)
 # Receiving and decrypting the key and vector from KM
 encryptedKey = sockNodeKM.recv(16)
 initializedVector = sockNodeKM.recv(16)
+
+K = b'asdeterjsdfwerlg'
 
 decryptedKey = func.decryptBlock(encryptedKey, mode, K, func.initVector)
 decryptedVector = func.decryptBlock(initializedVector, mode, K, func.initVector)

@@ -2,8 +2,6 @@ import socket
 
 import func
 
-K = b'gertfndsfpoiewjt'
-
 # Create the socket for node B
 sockNodeB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address_B = ('localhost', 2222)
@@ -11,6 +9,8 @@ sockNodeB.bind(server_address_B)
 
 sockNodeB.listen(1)
 conn_b, client = sockNodeB.accept()
+
+K = b'gertfndsfpoiewjt'
 
 # read from KM
 mode = conn_b.recv(3)
