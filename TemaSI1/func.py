@@ -30,14 +30,14 @@ def decryptBlock(block, mode, key, iv):
         modeType = AES.MODE_OFB
         aesObj = AES.new(key, modeType, iv)
         cypherEncryption = aesObj.encrypt(iv)
-        plainText = xor(cypherEncryption, block)
+        Text = xor(cypherEncryption, block)
     elif mode == "ECB":
         modeType = AES.MODE_ECB
         aesObj = AES.new(key, modeType)
         decryptedBlock = aesObj.decrypt(block)
-        plainText = decryptedBlock
+        Text = decryptedBlock
 
-    return plainText
+    return Text
 
 
 def xor(ba1, ba2):

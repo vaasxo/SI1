@@ -27,7 +27,7 @@ print("\nDecrypted key is:", decryptedKey)
 print("\nDecrypted vector is:", decryptedVector)
 
 # encrypt block with new decrypted key and send it back to KM
-encryptedBlock = func.encryptBlock(b"Between A and B ", mode, decryptedKey, decryptedVector)
+encryptedBlock = func.encryptBlock(b"Testing Comms ", mode, decryptedKey, decryptedVector)
 sockNodeKM.sendall(encryptedBlock)
 
 # receive message from KM in order to continue communication

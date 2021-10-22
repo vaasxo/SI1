@@ -10,7 +10,7 @@ sockNodeB.bind(server_address_B)
 sockNodeB.listen(1)
 conn_b, client = sockNodeB.accept()
 
-K = b'gertfndsfpoiewjt'
+K = b'asdeterjsdfwerlg'
 
 # read from KM
 mode = conn_b.recv(3)
@@ -33,7 +33,7 @@ print("\nStatus from KM:", successMessageFromKM.decode())
 conn_a, client_a = sockNodeB.accept()
 print('\nConnected to A')
 
-nrInBytes = conn_a.recv(2)
+nrInBytes = conn_a.recv(1)
 print(nrInBytes.decode('utf-8'))
 numberOfBlocks = int(float(nrInBytes.decode('utf-8')))
 conn_b.sendall(str(numberOfBlocks).encode())

@@ -2,7 +2,7 @@ import socket
 import func
 
 K1 = func.generateRandom16bytes()  # key for ECB/OFB method
-K = b'fgaldghetyjklmno'  # K'
+K = b'asdeterjsdfwerlg'  # K'
 initializedVector = func.generateRandom16bytes()
 
 
